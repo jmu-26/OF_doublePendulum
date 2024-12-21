@@ -1,0 +1,2 @@
+# OF_doublePendulum
+OpenFOAMのrigidBodyMotionによる二重振り子のケース
