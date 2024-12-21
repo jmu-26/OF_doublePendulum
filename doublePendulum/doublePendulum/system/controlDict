@@ -1,0 +1,34 @@
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+FoamFile
+{
+	version    2.0;
+	format    ascii;
+	class    dictionary;
+	object    controlDict;
+}
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+application    pimpleFoam;
+startFrom    startTime;
+startTime    0;
+stopAt    endTime;
+endTime    25.0;
+writeControl    adjustableRunTime;
+writeInterval    0.05;
+deltaT    0.01;
+//deltaT    0.05;
+purgeWrite    0;
+writeFormat    ascii;
+writePrecision    8;
+writeCompression    on;
+timeFormat    general;
+timePrecision    8;
+runTimeModifiable    on;
+
+/*
+libs (rigidBodyMeshMotion);
+DebugSwitches
+{
+    rigidBodyModel 1;
+}
+*/

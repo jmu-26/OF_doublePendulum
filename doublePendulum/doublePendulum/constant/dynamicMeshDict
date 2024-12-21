@@ -1,0 +1,76 @@
+FoamFile
+{
+    version    2.0;
+    format    ascii;
+    class    dictionary;
+    object    dynamicMeshDict;
+}
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+dynamicFvMesh    dynamicMotionSolverFvMesh;
+
+motionSolverLibs (rigidBodyMeshMotion);
+motionSolver rigidBodyMotion;
+report on;
+
+solver
+{
+    type Newmark;
+}
+
+accelerationRelaxation 1.0;
+
+rho rhoInf;
+rhoInf 1.0;
+g (0.0 0.0 -9.81);
+
+bodies
+{
+    box1
+    {
+        type    cuboid;
+        parent  root;
+
+        mass 5;
+        L (0.1 0.1 0.1);
+        centreOfMass (-1.0 0.0 0.0);
+        joint
+        {
+            type Ry;
+        }
+        transform (1 0 0 0 1 0 0 0 1) (0.0 0.0 1.0);
+    
+        patches (box1);
+        innerDistance 100;
+        outerDistance 200;
+    }
+
+    box2
+    {
+        type cuboid;
+        parent box1;
+
+        mass 5;
+        L (0.1 0.1 0.1);
+        centreOfMass (-1.0 0.0 0.0);
+        joint
+        {
+            type Ry;
+        }
+        transform (1 0 0 0 1 0 0 0 1) (-1.0 0.0 0.0);
+
+        patches (box2);
+        innerDistance 100;
+        outerDistance 200;
+    }
+}
+
+
+restraints
+{
+}
+
+solvers
+{
+}
+
