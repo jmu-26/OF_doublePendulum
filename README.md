@@ -10,4 +10,4 @@ OpenFOAM v2212で動作確認をしています。
 
 ## 可視化サンプル
 
-![doublePendulum](https://github.com/user-attachments/assets/cf39df72-57a2-4d14-96d6-8c8b64064640)
+![doublePendulum](https://github.com/user-attachments/assets/17c0bf36-e9d2-4223-ba17-175467ba165d)
